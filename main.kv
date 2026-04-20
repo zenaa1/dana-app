@@ -1,0 +1,47 @@
+<MainLayout>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: nama
+        hint_text: "Nama"
+        size_hint_y: None
+        height: 50
+
+    TextInput:
+        id: nomor
+        hint_text: "Nomor DANA"
+        size_hint_y: None
+        height: 50
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+
+        Button:
+            text: "Tambah"
+            on_press: root.tambah()
+
+        Button:
+            text: "Edit"
+            on_press: root.edit()
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+
+        Button:
+            text: "Copy"
+            on_press: root.copy_nomor()
+
+        Button:
+            text: "Hapus"
+            on_press: root.hapus()
+
+    ScrollView:
+        GridLayout:
+            id: list_container
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
